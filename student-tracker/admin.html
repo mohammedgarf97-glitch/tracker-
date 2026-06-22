@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>لوحة المعلم - أ. محمد علي</title>
+  <meta name="theme-color" content="#1D9E75">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+</head>
+<body class="app-body">
+
+  <!-- شريط علوي -->
+  <header class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-sm">ST</div>
+      <span>أ. محمد علي</span>
+    </div>
+    <div class="topbar-actions">
+      <span class="role-badge admin-badge">معلم</span>
+      <button class="icon-btn" onclick="logout()" title="خروج">
+        <i class="ti ti-logout"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="main-content" id="main-content">
+    <!-- يتم تحميل الصفحات هنا ديناميكياً -->
+  </main>
+
+  <!-- شريط التنقل السفلي -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="loadPage('dashboard')" id="nav-dashboard">
+      <i class="ti ti-dashboard"></i>
+      <span>الرئيسية</span>
+    </button>
+    <button class="nav-item" onclick="loadPage('students')" id="nav-students">
+      <i class="ti ti-users"></i>
+      <span>الطلاب</span>
+    </button>
+    <button class="nav-item" onclick="loadPage('attendance')" id="nav-attendance">
+      <i class="ti ti-calendar-check"></i>
+      <span>الحضور</span>
+    </button>
+    <button class="nav-item" onclick="loadPage('announcements')" id="nav-announcements">
+      <i class="ti ti-speakerphone"></i>
+      <span>إعلانات</span>
+    </button>
+    <button class="nav-item" onclick="loadPage('more')" id="nav-more">
+      <i class="ti ti-dots"></i>
+      <span>المزيد</span>
+    </button>
+  </nav>
+
+  <!-- نافذة منبثقة عامة -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <span id="modal-title">عنوان</span>
+      <button class="icon-btn" onclick="closeModal()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+
+  <!-- رسالة Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/db.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

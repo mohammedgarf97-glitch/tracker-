@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>بوابة الطالب - رياضيات أ. محمد علي</title>
+  <meta name="theme-color" content="#1D9E75">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+</head>
+<body class="app-body">
+
+  <header class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-sm">ST</div>
+      <span id="student-name-header">الطالب</span>
+    </div>
+    <div class="topbar-actions">
+      <span class="role-badge student-badge">طالب</span>
+      <button class="icon-btn" onclick="logout()">
+        <i class="ti ti-logout"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content" id="main-content"></main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="loadPage('profile')" id="nav-profile">
+      <i class="ti ti-user-circle"></i>
+      <span>ملفي</span>
+    </button>
+    <button class="nav-item" onclick="loadPage('my-attendance')" id="nav-my-attendance">
+      <i class="ti ti-calendar-stats"></i>
+      <span>حضوري</span>
+    </button>
+    <button class="nav-item scan-center" onclick="loadPage('scan')" id="nav-scan">
+      <div class="scan-btn-circle">
+        <i class="ti ti-scan"></i>
+      </div>
+    </button>
+    <button class="nav-item" onclick="loadPage('announcements')" id="nav-announcements">
+      <i class="ti ti-bell"></i>
+      <span>إعلانات</span>
+    </button>
+    <button class="nav-item" onclick="loadPage('resources')" id="nav-resources">
+      <i class="ti ti-books"></i>
+      <span>موارد</span>
+    </button>
+  </nav>
+
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <span id="modal-title">عنوان</span>
+      <button class="icon-btn" onclick="closeModal()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/db.js"></script>
+  <script src="js/student.js"></script>
+</body>
+</html>
